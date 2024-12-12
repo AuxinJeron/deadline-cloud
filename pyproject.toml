@@ -178,6 +178,9 @@ markers = [
 filterwarnings = [
     "ignore::DeprecationWarning"
 ]
+# It is not required for PySide6 6.5.2+
+# https://pytest-qt.readthedocs.io/en/latest/virtual_methods.html#
+qt_no_exception_capture = 1
 
 
 [tool.coverage.run]
