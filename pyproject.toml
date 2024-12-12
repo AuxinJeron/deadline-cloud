@@ -157,7 +157,6 @@ line-length = 100
 xfail_strict = true
 addopts = [
     "--durations=5",
-    "-p no:pytest-qt",
     "--color=yes",
     "--cov=src/deadline",
     "--cov-report=html:build/coverage",
