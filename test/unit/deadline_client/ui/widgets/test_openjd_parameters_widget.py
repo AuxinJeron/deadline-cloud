@@ -1,14 +1,11 @@
 # Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
 
-import pytest
 from deadline.client.ui.widgets.openjd_parameters_widget import (
     _JobTemplateLineEditWidget,
     _JobTemplateIntSpinBoxWidget,
     _JobTemplateFloatSpinBoxWidget,
 )
 from conftest import STRING_FIELD_MAX_LENGHTH
-
-pytest.skip("skipping Qt tests on ubuntu", allow_module_level=True)
 
 
 def test_input_in_line_edit_widget_should_be_truncated(qtbot):

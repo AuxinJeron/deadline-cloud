@@ -1,6 +1,5 @@
 # Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
 
-import pytest
 from deadline.client.ui.widgets.host_requirements_tab import (
     HardwareRequirementsWidget,
     CustomAmountWidget,
@@ -14,7 +13,6 @@ from deadline.client.ui.widgets.host_requirements_tab import (
 )
 from unittest.mock import MagicMock
 
-pytest.skip("skipping Qt tests on ubuntu", allow_module_level=True)
 
 AMOUNT_NAME_MAX_LENGTH = 100 - len(AMOUNT_CAPABILITY_PREFIX)
 ATTRIBUTE_NAME_MAX_LENGTH = 100 - len(ATTRIBUTE_CAPABILITY_PREFIX)

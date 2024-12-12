@@ -5,8 +5,6 @@ from deadline.client.ui.widgets.shared_job_settings_tab import SharedJobSettings
 from deadline.client.ui.dataclasses import JobBundleSettings
 from conftest import STRING_FIELD_MAX_LENGHTH
 
-pytest.skip("skipping Qt tests on ubuntu", allow_module_level=True)
-
 
 @pytest.fixture(scope="function")
 def shared_job_settings_tab(qtbot, temp_job_bundle_dir) -> SharedJobSettingsWidget:
