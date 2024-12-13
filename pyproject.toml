@@ -162,7 +162,7 @@ addopts = [
     "--cov-report=html:build/coverage",
     "--cov-report=xml:build/coverage/coverage.xml",
     "--cov-report=term-missing",
-    # "--numprocesses=auto"
+    "--numprocesses=auto"
 ]
 testpaths = [ "test/unit" ]
 looponfailroots = [
