@@ -7,7 +7,8 @@ try:
     from deadline.client.ui.widgets.shared_job_settings_tab import SharedJobSettingsWidget
     from deadline.client.ui.dataclasses import JobBundleSettings
 except ImportError:
-    pytest.importorskip("pytest-qt")
+    # The tests in this file should be skipped if Qt UI related modules cannot be loaded
+    pytest.importorskip("deadline.client.ui.widgets.shared_job_settings_tab")
 
 
 @pytest.fixture(scope="function")

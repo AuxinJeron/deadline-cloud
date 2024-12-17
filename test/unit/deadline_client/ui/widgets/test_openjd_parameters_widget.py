@@ -10,7 +10,8 @@ try:
         _JobTemplateFloatSpinBoxWidget,
     )
 except ImportError:
-    pytest.importorskip("pytest-qt")
+    # The tests in this file should be skipped if Qt UI related modules cannot be loaded
+    pytest.importorskip("deadline.client.ui.widgets.openjd_parameters_widget")
 
 
 def test_input_in_line_edit_widget_should_be_truncated(qtbot):
