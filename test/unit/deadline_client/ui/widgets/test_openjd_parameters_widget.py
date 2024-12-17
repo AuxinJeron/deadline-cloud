@@ -1,14 +1,16 @@
 # Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
 
-import sys
+import pytest
 from conftest import STRING_FIELD_MAX_LENGHTH
 
-if not sys.platform.startswith("linux"):
+try:
     from deadline.client.ui.widgets.openjd_parameters_widget import (
         _JobTemplateLineEditWidget,
         _JobTemplateIntSpinBoxWidget,
         _JobTemplateFloatSpinBoxWidget,
     )
+except ImportError:
+    pytest.importorskip("pytest-qt")
 
 
 def test_input_in_line_edit_widget_should_be_truncated(qtbot):

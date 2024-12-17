@@ -1,9 +1,9 @@
 # Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
 
-import sys
+import pytest
 from unittest.mock import MagicMock
 
-if not sys.platform.startswith("linux"):
+try:
     from deadline.client.ui.widgets.host_requirements_tab import (
         HardwareRequirementsWidget,
         CustomAmountWidget,
@@ -15,6 +15,8 @@ if not sys.platform.startswith("linux"):
         MIN_INT_VALUE,
         MAX_INT_VALUE,
     )
+except ImportError:
+    pytest.importorskip("pytest-qt")
 
 
 AMOUNT_NAME_MAX_LENGTH = 100 - len(AMOUNT_CAPABILITY_PREFIX)
