@@ -1,7 +1,7 @@
 # Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
 
-import sys
-import pytest
+from unittest.mock import MagicMock
+
 from deadline.client.ui.widgets.host_requirements_tab import (
     HardwareRequirementsWidget,
     CustomAmountWidget,
@@ -12,13 +12,6 @@ from deadline.client.ui.widgets.host_requirements_tab import (
     AMOUNT_CAPABILITY_PREFIX,
     MIN_INT_VALUE,
     MAX_INT_VALUE,
-)
-from unittest.mock import MagicMock
-
-
-pytest.mark.skipif(
-    sys.platform.startswith("linux"),
-    reason="Skipping tests on Linux since PySide6-essentials requires glibc 2.28+ which is not available in integration test env",
 )
 
 
