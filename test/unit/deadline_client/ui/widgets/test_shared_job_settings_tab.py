@@ -1,10 +1,12 @@
 # Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
 
+import sys
 import pytest
 from conftest import STRING_FIELD_MAX_LENGHTH
 
-from deadline.client.ui.widgets.shared_job_settings_tab import SharedJobSettingsWidget
-from deadline.client.ui.dataclasses import JobBundleSettings
+if not sys.platform.startswith("linux"):
+    from deadline.client.ui.widgets.shared_job_settings_tab import SharedJobSettingsWidget
+    from deadline.client.ui.dataclasses import JobBundleSettings
 
 
 @pytest.fixture(scope="function")

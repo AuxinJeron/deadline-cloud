@@ -1,11 +1,14 @@
 # Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
 
+import sys
 from conftest import STRING_FIELD_MAX_LENGHTH
-from deadline.client.ui.widgets.openjd_parameters_widget import (
-    _JobTemplateLineEditWidget,
-    _JobTemplateIntSpinBoxWidget,
-    _JobTemplateFloatSpinBoxWidget,
-)
+
+if not sys.platform.startswith("linux"):
+    from deadline.client.ui.widgets.openjd_parameters_widget import (
+        _JobTemplateLineEditWidget,
+        _JobTemplateIntSpinBoxWidget,
+        _JobTemplateFloatSpinBoxWidget,
+    )
 
 
 def test_input_in_line_edit_widget_should_be_truncated(qtbot):

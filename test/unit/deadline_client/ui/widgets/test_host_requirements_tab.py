@@ -1,18 +1,20 @@
 # Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
 
+import sys
 from unittest.mock import MagicMock
 
-from deadline.client.ui.widgets.host_requirements_tab import (
-    HardwareRequirementsWidget,
-    CustomAmountWidget,
-    CustomAttributeWidget,
-    CustomAttributeValueWidget,
-    CustomRequirementsWidget,
-    ATTRIBUTE_CAPABILITY_PREFIX,
-    AMOUNT_CAPABILITY_PREFIX,
-    MIN_INT_VALUE,
-    MAX_INT_VALUE,
-)
+if not sys.platform.startswith("linux"):
+    from deadline.client.ui.widgets.host_requirements_tab import (
+        HardwareRequirementsWidget,
+        CustomAmountWidget,
+        CustomAttributeWidget,
+        CustomAttributeValueWidget,
+        CustomRequirementsWidget,
+        ATTRIBUTE_CAPABILITY_PREFIX,
+        AMOUNT_CAPABILITY_PREFIX,
+        MIN_INT_VALUE,
+        MAX_INT_VALUE,
+    )
 
 
 AMOUNT_NAME_MAX_LENGTH = 100 - len(AMOUNT_CAPABILITY_PREFIX)
