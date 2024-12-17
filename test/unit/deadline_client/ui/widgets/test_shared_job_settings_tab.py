@@ -1,16 +1,14 @@
 # Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
 
-import sys
 import pytest
-from deadline.client.ui.widgets.shared_job_settings_tab import SharedJobSettingsWidget
-from deadline.client.ui.dataclasses import JobBundleSettings
 from conftest import STRING_FIELD_MAX_LENGHTH
 
-
-pytest.mark.skipif(
-    sys.platform.startswith("linux"),
-    reason="Skipping tests on Linux since PySide6-essentials requires glibc 2.28+ which is not available in integration test env",
-)
+try:
+    from deadline.client.ui.widgets.shared_job_settings_tab import SharedJobSettingsWidget
+    from deadline.client.ui.dataclasses import JobBundleSettings
+except ImportError:
+    # The tests in this file should be skipped if Qt UI related modules cannot be loaded
+    pytest.importorskip("deadline.client.ui.widgets.shared_job_settings_tab")
 
 
 @pytest.fixture(scope="function")
