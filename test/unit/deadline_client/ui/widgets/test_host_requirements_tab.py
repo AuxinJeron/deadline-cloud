@@ -1,5 +1,7 @@
 # Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
 
+import sys
+import pytest
 from deadline.client.ui.widgets.host_requirements_tab import (
     HardwareRequirementsWidget,
     CustomAmountWidget,
@@ -12,6 +14,12 @@ from deadline.client.ui.widgets.host_requirements_tab import (
     MAX_INT_VALUE,
 )
 from unittest.mock import MagicMock
+
+
+pytest.mark.skipif(
+    sys.platform.startswith("linux"),
+    reason="Skipping tests on Linux since PySide6-essentials requires glibc 2.28+ which is not available in integration test env",
+)
 
 
 AMOUNT_NAME_MAX_LENGTH = 100 - len(AMOUNT_CAPABILITY_PREFIX)
